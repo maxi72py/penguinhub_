@@ -1,0 +1,306 @@
+/* Estilo base del body */
+body {
+    margin: 0; /* Quita márgenes por defecto del navegador */
+    background-color: rgb(234, 242, 255); /* Fondo azul claro */
+    font-family: system-ui; /* Fuente del sistema para mejor rendimiento */
+    height: 100vh; /* Alto igual a la ventana visible */
+}
+
+/* Contenedor principal flexible que ocupa toda la pantalla */
+.god_container {
+    height: 100%;
+    width: 100%;
+    display: flex; /* Habilita flexbox para ordenar hijos */
+    box-sizing: border-box; /* Padding y borde cuentan dentro del tamaño */
+}
+
+/* ----- NIVEL 1: Barra lateral ----- */
+.general_nav {
+    display: flex; /* Contenedor flexible */
+    flex-direction: column; /* Los hijos van en columna */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centra horizontalmente */
+    height: 100%; /* Ocupa todo el alto del padre */
+    background-color: #282748; /* Color oscuro de fondo */
+    width: 100px; /* Ancho fijo inicial */
+    min-width: clamp(100px, 20%, 110px); /* Ancho mínimo adaptable */
+    transition: min-width 0.4s; /* Transición suave para cambio de ancho */
+    border-radius: 0 35px 35px 0; /* Bordes redondeados sólo a la derecha */
+}
+
+/* Cuando el mouse está encima, la barra lateral se ensancha */
+.general_nav:hover {
+    min-width: clamp(120px, 30vw, 220px);
+}
+
+/* Contenido principal que crece para ocupar espacio */
+.general_section {
+    flex-grow: 1; /* Crece para llenar espacio disponible */
+    overflow: hidden; /* Oculta contenido que se desborde */
+    padding: 20px; /* Espacio interno */
+}
+
+/* ----- NIVEL 2: Contenedor de imagen en la barra ----- */
+.general_nav_img_container {
+    flex-grow: 0.5; /* Crece un poco menos */
+    width: 100%; /* Ocupa todo el ancho */
+    align-content: center; /* Centra contenido */
+}
+
+/* Imagen dentro del contenedor */
+.general_nav_img_container img{
+    max-width: 100%; /* No se pasa del contenedor */
+    position: relative;
+    bottom: 0; /* Posición base */
+    filter: contrast(2) drop-shadow(0 0 5px #e7feff); /* Contraste fuerte y sombra */
+}
+
+/* Listas de navegación y perfil sin márgenes y en columna */
+.general_nav_list,
+.general_nav_list_profile {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Lista principal con crecimiento grande */
+.general_nav_list {
+    position: relative;
+    flex-grow: 6; /* Ocupa la mayor parte del espacio */
+    justify-content: space-evenly; /* Espacio igual entre ítems */
+}
+
+/* Líneas decorativas arriba y abajo de la lista */
+.general_nav_list::before,
+.general_nav_list::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #111; /* Línea oscura */
+    left: 0;
+}
+.general_nav_list::before { top: 0; }
+.general_nav_list::after { bottom: 0; }
+
+/* Cuando NO hay hover en la barra, los links están invisibles */
+.general_nav:not(:hover) .general_nav_list .nav-link,
+.general_nav:not(:hover) .general_nav_list_profile .nav-link {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Cuando hay hover, los links se hacen visibles */
+.general_nav:hover .nav-link {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilo de los items de la lista */
+.general_nav li {
+    list-style: none; /* Quita viñetas */
+    margin-left: 30px; /* Separación a la izquierda */
+    position: relative;
+    white-space: nowrap; /* Evita que el texto se parta en varias líneas */
+    border-radius: 30px 0 0 30px; /* Bordes redondeados a la izquierda */
+}
+
+/* Enlaces dentro de la barra */
+.general_nav a {
+    padding: 18px 8px; /* Espacio interno */
+    display: flex; /* Flex para iconos y texto */
+    align-items: center; /* Centra vertical */
+    gap: 10px; /* Espacio entre icono y texto */
+    text-decoration: none; /* Quita subrayado */
+    color: rgb(234, 242, 255); /* Color claro */
+    position: relative;
+    z-index: 2; /* Sobrepone elementos */
+}
+
+/* Iconos un poco más grandes */
+.general_nav_list .material-symbols-outlined {
+    scale: 1.2;
+}
+
+/* ----- Hover efectos ----- */
+
+/* Cambia el color del texto y iconos al pasar mouse */
+.general_nav_list-item:hover a {
+    color: #282748; /* Color oscuro */
+}
+
+.general_nav_list-item:hover .material-symbols-outlined {
+    color: #282748;
+}
+
+/* ----- NIVEL 3: Decoraciones para items de lista ----- */
+
+/* Pseudo-elementos para formas curvas en los lados */
+.general_nav_list .general_nav_list-item::before,
+.general_nav_list .general_nav_list-item::after {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 40px;
+    right: 0;
+    z-index: 1;
+}
+
+/* Curva inferior */
+.general_nav_list .general_nav_list-item::after {
+    top: -50%;
+    border-radius: 0 0 50px 0;
+}
+
+/* Curva superior */
+.general_nav_list .general_nav_list-item::before {
+    bottom: -50%;
+    border-radius: 0 25px 0 0;
+}
+
+/* Sombras cuando pasás el mouse para el efecto */
+.general_nav_list .general_nav_list-item:hover::after {
+    box-shadow: 20px 20px 0 20px rgb(234, 242, 255);
+    transition-timing-function: linear;
+}
+
+.general_nav_list .general_nav_list-item:hover::before {
+    box-shadow: 20px -20px 0 20px rgb(234, 242, 255);
+    transition-timing-function: linear;
+}
+
+/* Cambia fondo y texto cuando pasas el mouse */
+.general_nav_list .general_nav_list-item:hover {
+    color: #f8edd1; /* Texto claro */
+    background-color: rgb(234, 242, 255); /* Fondo claro */
+}
+
+/* ----- Estilos para perfil y logout ----- */
+.general_nav_list-item_user .nav-link {
+    font-size: 1.1rem; /* Más grande */
+    transform: translateY(-10%); /* Sube un poco */
+}
+
+.general_nav_list-item_logout .nav-link {
+    font-size: 1.2rem;
+    transform: translateY(-10%);
+}
+
+/* Contenedor del perfil con espacio */
+.general_nav_list_profile {
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
+/* Cambia color al pasar el mouse sobre links del perfil */
+.general_nav_list_profile a:hover {
+    color: rgb(255, 218, 35); /* Amarillo brillante */
+}
+
+/* Color rojo para logout al hacer hover */
+.general_nav_list_profile .logout:hover,
+#logout {
+    color: rgb(219, 62, 41);
+}
+
+.analogia_container {
+    background-color: #f0f4ff;  /* Fondo clarito, parecido al body */
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombrita suave */
+    font-family: system-ui;
+    font-size: 1rem;
+    color: #222;
+    min-height: 100px; /* Que sea un poco más alto */
+    resize: vertical; /* Que puedas redimensionar solo verticalmente */
+    border: 1px solid #aaa;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Clase para ocultar elementos */
+.oculto {
+    display: none;
+}
+
+
+/* Contenedor general del modal: ocupa toda la pantalla, con fondo semitransparente */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijo en pantalla, no se mueve al scrollear */
+  z-index: 1000; /* Por encima de todo */
+    left: 0;
+    top: 0;
+  width: 100%; /* Ancho completo de la ventana */
+  height: 100%; /* Alto completo de la ventana */
+  overflow: auto; /* Si el contenido es muy grande, agrega scroll */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+}
+
+/* Cuando queremos mostrar el modal, le sacamos display none (con JS) */
+.modal.mostrar {
+    display: block;
+}
+
+/* Contenido del modal: caja blanca centrada y con sombra */
+.modal_contenido {
+  background-color: #fff; /* Fondo blanco */
+  margin: 10% auto; /* Centrado vertical (10% desde arriba) y horizontal */
+  padding: 20px; /* Espacio interno */
+  border-radius: 8px; /* Bordes redondeados */
+  width: 80%; /* Ancho del modal, puede ser ajustado */
+  max-width: 600px; /* Ancho máximo para pantallas grandes */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para que se destaque */
+  position: relative; /* Para posicionar elementos internos relativos */
+}
+
+/* Botón para cerrar el modal (la cruz) */
+.cerrar {
+  color: #aaa; /* Color gris claro */
+  float: right; /* Se alinea a la derecha */
+  font-size: 28px; /* Tamaño grande */
+  font-weight: bold; /* Negrita */
+  cursor: pointer; /* Aparece la mano al pasar por encima */
+  user-select: none; /* Evita que se seleccione el texto */
+}
+
+/* Cuando el botón cerrar está activo o se pasa el mouse por encima */
+.cerrar:hover,
+.cerrar:focus {
+  color: #000; /* Cambia a negro para mejor contraste */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilos básicos para inputs y textarea dentro del modal */
+#modalEditar input[type="text"],
+#modalEditar textarea {
+  width: 100%; /* Ocupan todo el ancho disponible */
+  padding: 8px; /* Espacio interno para que no quede pegado al borde */
+  margin-bottom: 15px; /* Separación entre campos */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 4px; /* Bordes levemente redondeados */
+  box-sizing: border-box; /* Para que el padding no aumente el ancho */
+  font-size: 16px; /* Tamaño legible */
+}
+
+/* Botón dentro del modal */
+#modalEditar button {
+  background-color: #4CAF50; /* Verde agradable */
+  color: white; /* Texto blanco */
+  padding: 10px 20px; /* Espacio interno */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Mano al pasar el mouse */
+  font-size: 16px; /* Tamaño del texto */
+}
+
+/* Cambia el color del botón al pasar el mouse */
+#modalEditar button:hover {
+    background-color: #45a049;
+}
+
+
+

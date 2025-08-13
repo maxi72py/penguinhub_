@@ -1,0 +1,159 @@
+.home_container{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.profile_section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.codepro_presentation {
+
+    border-radius: 10px;
+    text-align: center;
+
+}
+.profile_section_content{
+    flex-grow: 1;
+    display: flex;
+    gap: 50px;
+}
+
+/* nivel 2 */
+
+.about_me {
+    max-width: 25%;
+    background: rgb(15, 16, 31); 
+    padding: 15px;
+    border-radius: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.myrecods {
+    position: relative;
+    flex-grow:1;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    overflow: hidden; 
+    padding: 20px;
+}
+
+.myrecods::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(255, 255, 255); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    z-index: 0; 
+}
+
+.myrecods > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+h1 {
+    font-weight: 1000;
+    font-family: 'Muli', sans-serif; 
+    padding: 0;
+    margin: auto;
+    font-size: clamp(3.6rem, 4.4vw, 5.5rem);
+    transform: translateY(-10%);
+    text-wrap: nowrap;
+    width: min-content;
+}
+
+h1 strong {
+    font-size: clamp(5.5rem, 7vw,7rem);
+    letter-spacing: 0;
+}
+
+h1 strong {
+    animation: fluido 10s ease-in-out infinite;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes fluido {
+    0% { background-position: 0 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0 50% }
+}
+
+/* nivel 3 */
+.myphoto{
+    width: 50%;
+    aspect-ratio: 1;
+    background-color: #444;
+    border-radius: 50%;
+}
+.name_container {
+    color: aliceblue;
+}
+
+.myinfo{
+    flex-grow: 0.5;
+    background-color: rgb(40, 39, 72);
+    color: rgb(204, 204, 238);
+    padding: 10px;
+    border-radius: 12px;
+    padding: 10px 20px;
+    position: relative;
+}
+.myinfo span{
+    position: absolute;
+    right: 10%;
+    bottom: 10px;
+}
+
+.myrecods > div{
+    width: 90%;
+    height: 70%;
+    background-color: rgba(34, 82, 255, 0.125);
+    border-radius: 7px;
+    padding: 8px;
+}
+
+.myrecods .doc{
+    width: 98%;
+    grid-column: 1/4;
+    box-sizing: border-box;
+}
+
+/* nivel 4 */
+.myrecods span{
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #555;
+}
+.talleres_list, .logros_list, .rol_list {
+    margin: 0;
+}
+
+.logros_list-item, .talleres_list-item, .rol_list-item{
+    list-style: none;
+    padding: 5px 0;
+}

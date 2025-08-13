@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:200,300,400,500,600,700,800,900&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='other_styles/presentation_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='section_styles/home_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='section_styles/bootcamp_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='days_styles/day1.css') }}">
+<body>
+    <section class="god_container">
+        <nav class="general_nav">
+            <div class="general_nav_img_container">
+                <img src="/static/img/logoPrincipal-Photoroom.png" alt="" class="aside__img">
+            </div>
+            <ul class="general_nav_list">
+                <li class="general_nav_list-item"><a href="#home_section"><samp class="material-symbols-outlined icon">home</samp><span class="nav-link">Inicio</span></a></li> 
+                <li class="general_nav_list-item"><a href="#bootcamp_section"><samp class="material-symbols-outlined">camping</samp><span class="nav-link">Bootcamp</span></a></li>
+                <li class="general_nav_list-item"><a href="#"><samp class="material-symbols-outlined">bolt</samp><span class="nav-link">The Dive</span></a></li>
+                <li class="general_nav_list-item"><a href="#"><samp class="material-symbols-outlined">Communities</samp><span class="nav-link">The huddle</span></a></li>
+                <li class="general_nav_list-item"><a href="#"><samp class="material-symbols-outlined">Computer</samp><span class="nav-link">hackathon</span></a></li>
+            </ul>
+            <ul class="general_nav_list_profile">
+                <li class="general_nav_list-item_user"><a href="#"><span class="material-symbols-outlined">circle</span><span class="nav-link">nombre</span></a></li>
+                <li class="general_nav_list-item_logout"><a class="logout" href="#"><span id="logout" class="material-symbols-outlined">logout</span><span class="nav-link">salir</span></a></li>
+            </ul>
+        </nav>
+        <main class="general_section">
+            <section class="presentation_styles" id="home_section" >
+                <div class="home_container">
+                    <div class="profile_section">
+                        <header class="codepro_presentation">
+                            <h1><strong>codePro 3.0</strong><br><span>with</span><b> penguinhub</b></h1>
+                        </header>
+                        <section class="profile_section_content">
+                            <div class="about_me">
+                                <div class="myphoto">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="name_container">
+                                    <h3>My name</h3>
+                                </div>
+                                <div class="myinfo">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. At temporibus nobis sed assumenda numquam itaque quos aspernatur mole
+                                    </p>
+                                    <span class="since">since: 2025</span>
+                                </div>
+                            </div>
+                            <div class="myrecods">
+                                <div class="talleres">
+                                    <span>Talleres</span>
+                                    <ul class="talleres_list">
+                                        <li class="talleres_list-item">Bases de datos</li>
+                                        <li class="talleres_list-item">Pygame</li>
+                                    </ul>
+                                </div>
+                                <div class="logros">
+                                    <span>Logros</span>
+                                    <ul class="logros_list">
+                                        <li class="logros_list-item">Mi primer hackathon</li>
+                                    </ul>
+                                </div>
+                                <div class="rol">
+                                    <span>Roles</span>
+                                    <ul class="rol_list">
+                                        <li class="rol_list-item">Estudiante</li>
+                                    </ul>
+                                </div>
+                                <div class="doc">
+                                    <div class="new_doc"></div>
+                                    <div class="my_doc"></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <section class="presentation_styles" id="bootcamp_section">
+                <div class="canlendario_bootcamp" id="canlendario_bootcamp">
+                    <div class="calendario_title">
+                        <img class="img_bootcamp1" src="/static/img/penguin_bootcamp1.png" alt="">
+                        <h2>Guia del Bootcamp</h2>
+                    </div>
+                    <div class="calendario_wraper" >
+                        <div><a class="dias" href="#dia1"><span>Introducción</span>0.1</a></div>
+                        <div><a class="dias" href=""><span>Pensamiento Computacional</span>0.2</a></div>
+                        <div><a class="dias" href=""><span>python</span>1</a></div>
+                        <div><a class="dias" href=""><span>python</span>2</a></div>
+                        <div><a class="dias" href=""><span>pyhon</span>3</a></div>
+                        <div><a class="dias" href=""><span>POO</span>4</a></div>
+                        <div><a class="dias" href=""><span>Frontend</span>5</a></div>
+                        <div><a class="dias" href=""><span>Backend</span>6</a></div>
+                        <div><a class="dias" href=""><span>Hackathon</span>7</a></div>
+                        <div class="agg_wraper" >
+                            <button id="agg_btn" class="agg_button">+
+                                <span>Agregar tema</span>
+                            </button>
+                            <div class="agg_contenido">
+                                <input type="text" placeholder="titulo">
+                                <input type="text" placeholder="nro_dia">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="presentation_styles" id="dia1">
+
+                <!-- VENTANA DEL DIA 1 DE LA PAGINA -->
+                <div class="dia1">
+                    <div class="tema_container">
+                    <!-- Botón para mostrar el formulario de agregar tema -->
+                    <button id="mostrarAgregarBtn">Agregar Tema</button>
+                    
+                    <!--FORMULARIO PARA AGREGAR NUEVOS TEMAS-->
+                    <form action="/tema" method="POST" class="form_agregar_tema oculto">
+
+
+                    <!-- El formulario se envia al servidor con la ruta "/tema". Usamos metodo POST porque vamos a enviar datos para crear un nuevo tema-->
+                        <input type="hidden" name="accion" value="agregar">
+                    <!--Campo oculto que le dice al servidor que la accion es "agregar". Esto sirve para que el backend sepa que operacion hacer cuando recibe el formulario -->
+
+                        <div class="wraper_campo">
+                            <label class="title" for="titulo">Titulo:</label>
+                            <input class="title_input" type="text" id="titulo" name="titulo" required>
+                        </div>
+                        <!--CAmpo de texto para el titulo del tema. "required" significa que no se puede dejar vacio, es obligatorio.
+                        El atributo "for" en el label con el input para mejor accesibilidad-->
+
+                        <label class="title titulo_input descripcion_title" for="descripcion">Descripción:</label>
+                        <textarea class="contenido_input" id="descripcion" name="descripcion" required></textarea>
+                        <!--Area de descripcion-->
+
+                        <div  class="sintaxis_container sintaxis_input_container">
+                            <label class="title titulo_input sintaxis_title" for="contenido">Sintaxis:</label>
+                            <textarea class="contenido_input" id="contenido" name="contenido"></textarea>
+                        </div>
+                        <!--Area de texto para el contenido principal o sintaxis del tema.
+                        Es obligatorio llenarlo-->
+
+                        <!--Area de texto para lo analogia del tema(explicacion extra o ejemplo)-->
+                        <div class="challenge_container" id="challenge_input_container">
+                            <label class="title titulo_input challenge_title"  for="challenge">Challenge:</label>
+                            <textarea class="contenido_input" id="challenge" name="challenge"></textarea>
+                            
+                            <label class="title titulo_input solucion_title"  for="solucion">Solucion:</label>
+                            <textarea class="contenido_input" id="solucion" name="solucion"></textarea>
+                        </div>
+                        <!--Area de texto para el reto o desafio relacionado con el tema.
+                        No es obligatorio-->
+
+                        <!--Area del texto para la solucion del reto.
+                        No es obligatorio.-->
+
+                        <button class="agg_tema" type="submit">Agregar Tema</button>
+                        <!--Boton que envia el formulario cuando clickeas-->
+
+                    </form>
+                    </div>
+
+                    <!-- Verifica si la lista "temas" No esta vacia -->
+                    {% if temas %}
+
+                        <!-- Si hay temas los recorre uno por uno -->
+                            {% for tema in temas %}
+
+                                <div class="tema_container"data-id="{{ tema.id }}">
+                                    <!-- Aquí todo el contenido del tema -->
+
+                                    <!-- Titulo dinamico del tema -->
+                                    <div class="title_container">
+                                        <h3 class="title"> {{ tema.titulo }} </h3>
+                                    </div>
+
+
+                                    <div class="tema_description">
+
+                                        <!-- Descripcion o resumen del tema -->
+                                        <p class="resumen"> {{ tema.descripcion }}</p>
+
+                                        <!-- Contenedor de la sintaxis o contenido principal -->
+                                        <div class="sintaxis_container">
+                                            <span>Sintaxis:</span>
+                                            <p class="sintaxis"> {{ tema.contenido }}</p>
+                                        </div>
+                                        <!-- Contener del challenge o reto -->
+                                        <div class="challenge_container">
+                                            <span>Challenge:</span>
+
+                                            <div class="challenge_content">
+
+                                                <!-- Texto del challenge-->
+                                                <p class="challenge"> {{ tema.challenge }}
+                                                </p>
+
+                                                <!-- Detalles para mostrar u ocultar la solucion -->
+                                                <details class="respuesta">
+                                                    <summary class="respuesta_titulo">
+                                                        <b>S</b> - Solución del challenge
+                                                    </summary>
+
+                                                    <!-- Contenido de la solucion-->
+                                                    <div class="respuesta_content">
+                                                        <p class="sintaxis"> {{ tema.solucion }}</p>
+                                                    </div>
+                                                </details>
+                                            </div>
+
+                                        </div>
+                                        <!-- Botones de acción -->
+                                            <div class="acciones_tema">
+                                                    
+
+                                                <!-- Botón ELIMINAR -->
+                                                <form action="/tema" method="POST" style="display:inline;" 
+                                                    onsubmit="return confirm('¿Seguro que quieres eliminar este tema?');">
+                                                    <!-- ID del tema -->
+                                                    <input type="hidden" name="id" value="{{ tema.id }}">
+                                                    <!-- Acción a realizar -->
+                                                    <input type="hidden" name="accion" value="eliminar">
+                                                    <button class="btn_eliminar" type="submit">Eliminar</button>
+                                                </form>
+
+                                            </div>
+
+
+                                    </div>
+                                </div>
+                                <hr>
+                        {% endfor %}
+                    <!-- Si la lista "temas" esta vacia, muestra este mensaje-->
+                    {% else %}
+                        <p class="mensaje-vacio">Agregá un tema nuevo!</p>
+                    {% endif %}
+                    <!--DESPUES ADORNARLO CON CSS-->
+                    
+                    <br><hr><br>
+                    <div class="feedback_section">
+    <div class="feedback_wraper">
+        <span>Feedback</span>
+        <div class="feedback_container">
+            <div class="feedback_display">
+                {% for c in feedback %}
+                    {% if feedback_editando and feedback_editando.id == c.id %}
+                        <!-- Formulario de edición -->
+                        <form class="feedback_enviado_ok" action="/feedback" method="POST">
+                            <input type="hidden" name="accion" value="actualizar">
+                            <input type="hidden" name="id" value="{{ c.id }}">
+                            <textarea style="resize: none; background-color: transparent; font-family: sans-serif; border: none;"
+                                    name="mensaje" required>{{ c.mensaje }}</textarea>
+                            <button class="btn_actualizar" type="submit">
+                                <span class="material-symbols-outlined">check</span>
+                            </button>
+                        </form>
+                    {% else %}
+                        <div class="feedback_enviado_ok">
+                            <label class="opcciones_mensajes" for="opcciones_mensajes">···</label>
+                            <p>{{ c.mensaje }}</p>
+                            <input style="display: none;" type="checkbox" id="opcciones_mensajes">
+                            <div class="feedback_buttom">
+                                <!-- Botón para editar -->
+                                <form action="/feedback" method="POST" style="display:inline;">
+                                    <input type="hidden" name="accion" value="editar">
+                                    <input type="hidden" name="id" value="{{ c.id }}">
+                                    <button class="edit_button" type="submit">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </button>
+                                </form>
+                                <!-- Botón para eliminar -->
+                                <form action="/feedback" method="POST" style="display:inline;">
+                                    <input type="hidden" name="accion" value="eliminar">
+                                    <input type="hidden" name="id" value="{{ c.id }}">
+                                    <button class="delete_button" type="submit">
+                                        <span class="material-symbols-outlined">delete</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <!-- Formulario para agregar nuevos comentarios -->
+            <form action="/feedback" method="POST">
+                <input type="hidden" name="accion" value="agregar">
+                <input class="feedback_input" name="mensaje" placeholder="Escribe un comentario..." required>
+                <button style="display: none;" type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+                </div>
+                <div class="dia1" id="dia2">
+                    <div class="tema_container">
+                    <!-- Botón para mostrar el formulario de agregar tema -->
+                    <button id="mostrarAgregarBtn">Agregar Tema</button>
+                    
+                    <!--FORMULARIO PARA AGREGAR NUEVOS TEMAS-->
+                    <form action="/tema" method="POST" class="form_agregar_tema oculto">
+
+
+                    <!-- El formulario se envia al servidor con la ruta "/tema". Usamos metodo POST porque vamos a enviar datos para crear un nuevo tema-->
+                        <input type="hidden" name="accion" value="agregar">
+                    <!--Campo oculto que le dice al servidor que la accion es "agregar". Esto sirve para que el backend sepa que operacion hacer cuando recibe el formulario -->
+
+                        <div class="wraper_campo">
+                            <label class="title" for="titulo">Titulo:</label>
+                            <input class="title_input" type="text" id="titulo" name="titulo" required>
+                        </div>
+                        <!--CAmpo de texto para el titulo del tema. "required" significa que no se puede dejar vacio, es obligatorio.
+                        El atributo "for" en el label con el input para mejor accesibilidad-->
+
+                        <label class="title titulo_input descripcion_title" for="descripcion">Descripción:</label>
+                        <textarea class="contenido_input" id="descripcion" name="descripcion" required></textarea>
+                        <!--Area de descripcion-->
+
+                        <div  class="sintaxis_container sintaxis_input_container">
+                            <label class="title titulo_input sintaxis_title" for="contenido">Sintaxis:</label>
+                            <textarea class="contenido_input" id="contenido" name="contenido"></textarea>
+                        </div>
+                        <!--Area de texto para el contenido principal o sintaxis del tema.
+                        Es obligatorio llenarlo-->
+
+                        <!--Area de texto para lo analogia del tema(explicacion extra o ejemplo)-->
+                        <div class="challenge_container" id="challenge_input_container">
+                            <label class="title titulo_input challenge_title"  for="challenge">Challenge:</label>
+                            <textarea class="contenido_input" id="challenge" name="challenge"></textarea>
+                            
+                            <label class="title titulo_input solucion_title"  for="solucion">Solucion:</label>
+                            <textarea class="contenido_input" id="solucion" name="solucion"></textarea>
+                        </div>
+                        <!--Area de texto para el reto o desafio relacionado con el tema.
+                        No es obligatorio-->
+
+                        <!--Area del texto para la solucion del reto.
+                        No es obligatorio.-->
+
+                        <button class="agg_tema" type="submit">Agregar Tema</button>
+                        <!--Boton que envia el formulario cuando clickeas-->
+
+                    </form>
+                    </div>
+
+                    <!-- Verifica si la lista "temas" No esta vacia -->
+                    {% if temas %}
+
+                        <!-- Si hay temas los recorre uno por uno -->
+                            {% for tema in temas %}
+
+                                <div class="tema_container"data-id="{{ tema.id }}">
+                                    <!-- Aquí todo el contenido del tema -->
+
+                                    <!-- Titulo dinamico del tema -->
+                                    <div class="title_container">
+                                        <h3 class="title"> {{ tema.titulo }} </h3>
+                                    </div>
+
+
+                                    <div class="tema_description">
+
+                                        <!-- Descripcion o resumen del tema -->
+                                        <p class="resumen"> {{ tema.descripcion }}</p>
+
+                                        <!-- Contenedor de la sintaxis o contenido principal -->
+                                        <div class="sintaxis_container">
+                                            <span>Sintaxis:</span>
+                                            <p class="sintaxis"> {{ tema.contenido }}</p>
+                                        </div>
+                                        <!-- Contener del challenge o reto -->
+                                        <div class="challenge_container">
+                                            <span>Challenge:</span>
+
+                                            <div class="challenge_content">
+
+                                                <!-- Texto del challenge-->
+                                                <p class="challenge"> {{ tema.challenge }}
+                                                </p>
+
+                                                <!-- Detalles para mostrar u ocultar la solucion -->
+                                                <details class="respuesta">
+                                                    <summary class="respuesta_titulo">
+                                                        <b>S</b> - Solución del challenge
+                                                    </summary>
+
+                                                    <!-- Contenido de la solucion-->
+                                                    <div class="respuesta_content">
+                                                        <p class="sintaxis"> {{ tema.solucion }}</p>
+                                                    </div>
+                                                </details>
+                                            </div>
+
+                                        </div>
+                                        <!-- Botones de acción -->
+                                            <div class="acciones_tema">
+                                                    
+
+                                                <!-- Botón ELIMINAR -->
+                                                <form action="/tema" method="POST" style="display:inline;" 
+                                                    onsubmit="return confirm('¿Seguro que quieres eliminar este tema?');">
+                                                    <!-- ID del tema -->
+                                                    <input type="hidden" name="id" value="{{ tema.id }}">
+                                                    <!-- Acción a realizar -->
+                                                    <input type="hidden" name="accion" value="eliminar">
+                                                    <button class="btn_eliminar" type="submit">Eliminar</button>
+                                                </form>
+
+                                            </div>
+
+
+                                    </div>
+                                </div>
+                                <hr>
+                        {% endfor %}
+                    <!-- Si la lista "temas" esta vacia, muestra este mensaje-->
+                    {% else %}
+                        <p class="mensaje-vacio">Agregá un tema nuevo!</p>
+                    {% endif %}
+                    <!--DESPUES ADORNARLO CON CSS-->
+                    
+                    <br><hr><br>
+                    <div class="feedback_section">
+    <div class="feedback_wraper">
+        <span>Feedback</span>
+        <div class="feedback_container">
+            <div class="feedback_display">
+                {% for c in feedback %}
+                    {% if feedback_editando and feedback_editando.id == c.id %}
+                        <!-- Formulario de edición -->
+                        <form class="feedback_enviado_ok" action="/feedback" method="POST">
+                            <input type="hidden" name="accion" value="actualizar">
+                            <input type="hidden" name="id" value="{{ c.id }}">
+                            <textarea style="resize: none; background-color: transparent; font-family: sans-serif; border: none;"
+                                    name="mensaje" required>{{ c.mensaje }}</textarea>
+                            <button class="btn_actualizar" type="submit">
+                                <span class="material-symbols-outlined">check</span>
+                            </button>
+                        </form>
+                    {% else %}
+                        <div class="feedback_enviado_ok">
+                            <label class="opcciones_mensajes" for="opcciones_mensajes">···</label>
+                            <p>{{ c.mensaje }}</p>
+                            <input style="display: none;" type="checkbox" id="opcciones_mensajes">
+                            <div class="feedback_buttom">
+                                <!-- Botón para editar -->
+                                <form action="/feedback" method="POST" style="display:inline;">
+                                    <input type="hidden" name="accion" value="editar">
+                                    <input type="hidden" name="id" value="{{ c.id }}">
+                                    <button class="edit_button" type="submit">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </button>
+                                </form>
+                                <!-- Botón para eliminar -->
+                                <form action="/feedback" method="POST" style="display:inline;">
+                                    <input type="hidden" name="accion" value="eliminar">
+                                    <input type="hidden" name="id" value="{{ c.id }}">
+                                    <button class="delete_button" type="submit">
+                                        <span class="material-symbols-outlined">delete</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <!-- Formulario para agregar nuevos comentarios -->
+            <form action="/feedback" method="POST">
+                <input type="hidden" name="accion" value="agregar">
+                <input class="feedback_input" name="mensaje" placeholder="Escribe un comentario..." required>
+                <button style="display: none;" type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script>
+    // Seleccionamos el botón y el formulario
+    const btnMostrar = document.getElementById('mostrarAgregarBtn');
+    const formAgregar = document.querySelector('.form_agregar_tema');
+
+    // Cuando clickeamos el botón, mostramos el formulario y ocultamos el botón
+    btnMostrar.addEventListener('click', () => {
+        if (formAgregar.classList.contains('oculto')) {
+        formAgregar.classList.remove('oculto');
+        btnMostrar.style.display = 'none'; // Opcional: ocultar botón después de mostrar formulario
+        }
+    });
+    </script>
+
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+
+</body>
+</html>
